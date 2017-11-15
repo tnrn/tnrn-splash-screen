@@ -74,7 +74,7 @@ static CGFloat edgeSizeWithRadius(CGFloat cornerRadius) {
     [self openSplashScreen:rootView];
 }
 
-- (void)setProgress:(int)progress
+- (void)setProgress:(float)progress
 {
     if (self.progressView.isHidden) {
         self.progressView.hidden = NO;
