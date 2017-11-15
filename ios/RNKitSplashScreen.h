@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, RCTCameraAspect) {
 
 @interface RNKitSplashScreen : NSObject
 
-@property (nonatomic, assign) int progress;
+@property (nonatomic, assign) float progress;
 @property (nonatomic, copy) NSString *tipText;
 @property (nonatomic, strong) UIImage *splashImage;
 @property (nonatomic, strong) UIImage *progressImage;
