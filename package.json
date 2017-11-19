@@ -24,7 +24,7 @@
   ],
   "peerDependencies": {
     "react": ">=15.3.1",
-    "react-native": ">=0.28"
+    "react-native": ">=0.46"
   },
   "license": "MIT"
 }
