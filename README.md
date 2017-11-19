@@ -23,11 +23,11 @@ First, `cd` to your RN project directory, and install RNMK through [rnpm](https:
 
 ### iOS
 
-* #### React Native < 0.29 (Using rnpm)
+* #### React Native < 0.46 (Using rnpm)
 
-  `rnpm install rnkit-splash-screen`
+  `rnpm install rnkit-splash-screen@1.0.3`
 
-* #### React Native >= 0.29
+* #### React Native >= 0.46
   `$npm install -S rnkit-splash-screen`
 
   `$react-native link rnkit-splash-screen`
@@ -39,11 +39,11 @@ First, `cd` to your RN project directory, and install RNMK through [rnpm](https:
 
 ### Android
 
-* #### React Native < 0.29 (Using rnpm)
+* #### React Native < 0.46 (Using rnpm)
 
-  `rnpm install rnkit-splash-screen`
+  `rnpm install rnkit-splash-screen@1.0.3`
 
-* #### React Native >= 0.29
+* #### React Native >= 0.46
   `$npm install -S rnkit-splash-screen`
 
   `$react-native link rnkit-splash-screen`
