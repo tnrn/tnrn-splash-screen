@@ -28,7 +28,7 @@ public class SplashScreenPackage implements ReactPackage {
       return Arrays.<NativeModule>asList(new SplashScreenModule(reactContext, activity, translucent));
     }
 
-    @Override
+    // RN 0.47 will remove this method
     public List<Class<? extends JavaScriptModule>> createJSModules() {
       return Collections.emptyList();
     }
