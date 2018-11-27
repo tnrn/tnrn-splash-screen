@@ -1,5 +1,5 @@
 rootProject.name = 'Example'
-include ':rnkit-splash-screen'
-project(':rnkit-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/rnkit-splash-screen/android')
+include ':tnrn-splash-screen'
+project(':tnrn-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/tnrn-splash-screen/android')
 
 include ':app'

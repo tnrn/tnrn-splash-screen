@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native'
 
-import RNKitSplashScreenManager from 'rnkit-splash-screen'
+import RNKitSplashScreenManager from 'tnrn-splash-screen'
 
 export default class App extends Component {
   hiddenSplashScreen () {
