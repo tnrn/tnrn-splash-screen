@@ -8,17 +8,13 @@
 
 #import "RNKitSplashScreen.h"
 
-#if __has_include(<React/RCTBridge.h>)
-
-#else
-
-#endif
-
 static RCTRootView *rootView = nil;
 
 #define SELF_CENTER CGPointMake([[UIScreen mainScreen] bounds].size.width/2, [[UIScreen mainScreen] bounds].size.height/2)
-#define SELF_WIDTH [[UIScreen mainScreen] bounds].size.width
-#define SELF_HEIGHT [[UIScreen mainScreen] bounds].size.height
+
+#define SCREEN_SIZE     [[UIScreen mainScreen] bounds].size
+#define SELF_WIDTH      [[UIScreen mainScreen] bounds].size.width
+#define SELF_HEIGHT     [[UIScreen mainScreen] bounds].size.height
 
 #define TIP_TEXT_HEIGHT 25
 #define TIP_TEXT_Y SELF_CENTER.y + 170
@@ -33,10 +29,6 @@ static RCTRootView *rootView = nil;
 @property (nonatomic, strong) UILabel *tipTextLabel;
 @property (nonatomic, strong) UIImageView *bgImageView;
 @end
-
-static CGFloat edgeSizeWithRadius(CGFloat cornerRadius) {
-    return cornerRadius * 2 + 1;
-}
 
 @implementation RNKitSplashScreen
 
@@ -161,8 +153,19 @@ static CGFloat edgeSizeWithRadius(CGFloat cornerRadius) {
         _bgImageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         if (_splashImage) {
             _bgImageView.image = _splashImage;
-        } else {
-            _bgImageView.image = [UIImage imageNamed:@"splash.png"];
+        }
+        else {
+            CGSize viewSize = [UIScreen mainScreen].bounds.size;
+            NSString *viewOrientation = @"Portrait";//横屏请设置成 @"Landscape"
+            NSString *launchImage = nil;
+            NSArray *imagesDict = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+            for (NSDictionary *dict in imagesDict) {
+                CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
+                if(CGSizeEqualToSize(imageSize, viewSize) && [viewOrientation isEqualToString:dict[@"UILaunchImageOrientation"]]) {
+                    launchImage = dict[@"UILaunchImageName"];
+                }
+            }
+            _bgImageView.image = [UIImage imageNamed:launchImage];
         }
     }
     return _bgImageView;
@@ -170,7 +173,7 @@ static CGFloat edgeSizeWithRadius(CGFloat cornerRadius) {
 
 - (UIImage *)imageWithColor:(UIColor *)color
                cornerRadius:(CGFloat)cornerRadius {
-    CGFloat minEdgeSize = edgeSizeWithRadius(cornerRadius);
+    CGFloat minEdgeSize = [self edgeSizeWithRadius:cornerRadius];
     CGRect rect = CGRectMake(0, 0, minEdgeSize, minEdgeSize);
     UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:cornerRadius];
     roundedRect.lineWidth = 0;
@@ -182,6 +185,10 @@ static CGFloat edgeSizeWithRadius(CGFloat cornerRadius) {
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return [image resizableImageWithCapInsets:UIEdgeInsetsMake(cornerRadius, cornerRadius, cornerRadius, cornerRadius)];
+}
+
+- (CGFloat)edgeSizeWithRadius:(CGFloat)cornerRadius {
+    return cornerRadius * 2 + 1;
 }
 
 @end

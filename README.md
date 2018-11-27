@@ -2,38 +2,38 @@
 [![react-native][rn-badge]][rn]
 [![MIT][license-badge]][license]
 [![bitHound Score][bithound-badge]][bithound]
-[![Downloads](https://img.shields.io/npm/dm/rnkit-splash-screen.svg)](https://www.npmjs.com/package/rnkit-splash-screen)
+[![Downloads](https://img.shields.io/npm/dm/tnrn-splash-screen.svg)](https://www.npmjs.com/package/tnrn-splash-screen)
 
 splashscreen for [React Native][rn].
 
 [**Support me with a Follow**](https://github.com/simman/followers)
 
-[npm-badge]: https://img.shields.io/npm/v/rnkit-splash-screen.svg
-[npm]: https://www.npmjs.com/package/rnkit-splash-screen
+[npm-badge]: https://img.shields.io/npm/v/tnrn-splash-screen.svg
+[npm]: https://www.npmjs.com/package/tnrn-splash-screen
 [rn-badge]: https://img.shields.io/badge/react--native-v0.40-05A5D1.svg
 [rn]: https://facebook.github.io/react-native
 [license-badge]: https://img.shields.io/dub/l/vibe-d.svg
-[license]: https://raw.githubusercontent.com/rnkit/rnkit-splash-screen/master/LICENSE
-[bithound-badge]: https://www.bithound.io/github/rnkit/rnkit-splash-screen/badges/score.svg
-[bithound]: https://www.bithound.io/github/rnkit/rnkit-splash-screen
+[license]: https://raw.githubusercontent.com/tnrn/tnrn-splash-screen/master/LICENSE
+[bithound-badge]: https://www.bithound.io/github/tnrn/tnrn-splash-screen/badges/score.svg
+[bithound]: https://www.bithound.io/github/tnrn/tnrn-splash-screen
 
 ## Getting Started
 
-First, `cd` to your RN project directory, and install RNMK through [rnpm](https://github.com/rnpm/rnpm) . If you don't have rnpm, you can install RNMK from npm with the command `npm i -S rnkit-splash-screen` and link it manually (see below).
+First, `cd` to your RN project directory, and install RNMK through [rnpm](https://github.com/rnpm/rnpm) . If you don't have rnpm, you can install RNMK from npm with the command `npm i -S tnrn-splash-screen` and link it manually (see below).
 
 ### iOS
 
 * #### React Native < 0.46 (Using rnpm)
 
-  `rnpm install rnkit-splash-screen@1.0.3`
+  `rnpm install tnrn-splash-screen@1.0.3`
 
 * #### React Native >= 0.46
-  `$npm install -S rnkit-splash-screen`
+  `$npm install -S tnrn-splash-screen`
 
-  `$react-native link rnkit-splash-screen`
+  `$react-native link tnrn-splash-screen`
 
 #### Manually
-1. Add `node_modules/rnkit-splash-screen/ios/RNKitSplashScreen.xcodeproj` to your xcode project, usually under the `Libraries` group
+1. Add `node_modules/tnrn-splash-screen/ios/RNKitSplashScreen.xcodeproj` to your xcode project, usually under the `Libraries` group
 1. Add `libRNKitSplashScreen.a` (from `Products` under `RNKitSplashScreen.xcodeproj`) to build target's `Linked Frameworks and Libraries` list
 1. Add ocr framework to `$(PROJECT_DIR)/Frameworks.`
 
@@ -41,20 +41,20 @@ First, `cd` to your RN project directory, and install RNMK through [rnpm](https:
 
 * #### React Native < 0.46 (Using rnpm)
 
-  `rnpm install rnkit-splash-screen@1.0.3`
+  `rnpm install tnrn-splash-screen@1.0.3`
 
 * #### React Native >= 0.46
-  `$npm install -S rnkit-splash-screen`
+  `$npm install -S tnrn-splash-screen`
 
-  `$react-native link rnkit-splash-screen`
+  `$react-native link tnrn-splash-screen`
 
 #### Manually
 1. JDK 7+ is required
 1. Add the following snippet to your `android/settings.gradle`:
 
   ```gradle
-include ':rnkit-splash-screen'
-project(':rnkit-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/rnkit-splash-screen/android/app')
+include ':tnrn-splash-screen'
+project(':tnrn-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/tnrn-splash-screen/android/app')
   ```
   
 1. Declare the dependency in your `android/app/build.gradle`
@@ -62,11 +62,11 @@ project(':rnkit-splash-screen').projectDir = new File(rootProject.projectDir, '.
   ```gradle
   dependencies {
       ...
-      compile project(':rnkit-splash-screen')
+      compile project(':tnrn-splash-screen')
   }
   ```
   
-1. Import `import io.rnkit.splashscreen.SplashScreenPackage;` and register it in your `MainActivity` (or equivalent, RN >= 0.32 MainApplication.java):
+1. Import `import io.tnrn.splashscreen.SplashScreenPackage;` and register it in your `MainActivity` (or equivalent, RN >= 0.32 MainApplication.java):
 
   ```java
   @Override
@@ -78,7 +78,7 @@ project(':rnkit-splash-screen').projectDir = new File(rootProject.projectDir, '.
   }
   ```
 
-Finally, you're good to go, feel free to require `rnkit-splash-screen` in your JS files.
+Finally, you're good to go, feel free to require `tnrn-splash-screen` in your JS files.
 
 Have fun! :metal:
 
@@ -87,7 +87,7 @@ Have fun! :metal:
 Import library
 
 ```
-import RNKitSplashScreenManager from 'rnkit-splash-screen'
+import RNKitSplashScreenManager from 'tnrn-splash-screen'
 ```
 
 ### TipText
@@ -128,6 +128,6 @@ RNKitSplashScreenManager.close({animationType: RNKitSplashScreenManager.animatio
 
 ## Questions
 
-Feel free to [contact me](mailto:liwei0990@gmail.com) or [create an issue](https://github.com/rnkit/rnkit-splash-screen/issues/new)
+Feel free to [contact me](mailto:liwei0990@gmail.com) or [create an issue](https://github.com/tnrn/tnrn-splash-screen/issues/new)
 
 > made with ♥

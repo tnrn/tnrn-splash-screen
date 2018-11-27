@@ -16,13 +16,11 @@
     return dispatch_get_main_queue();
 }
 
-@synthesize bridge = _bridge;
-
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(open) {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [_bridge reload];
+        [self.bridge reload];
     });
     [[RNKitSplashScreen shareInstance] openSplashScreen];
 }

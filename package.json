@@ -1,25 +1,25 @@
 {
-  "name": "rnkit-splash-screen",
+  "name": "tnrn-splash-screen",
   "description": "splashscreen for react-native",
   "main": "lib/index.js",
   "author": "SimMan <liwei0990@gmail.com>",
-  "version": "1.1.0",
+  "version": "0.1.0",
   "scripts": {
     "test": "npm run test"
   },
-  "homepage": "https://github.com/rnkit/rnkit-splash-screen",
-  "bugs": "https://github.com/rnkit/rnkit-splash-screen/issues",
+  "homepage": "https://github.com/tnrn/tnrn-splash-screen",
+  "bugs": "https://github.com/tnrn/tnrn-splash-screen/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rnkit/rnkit-splash-screen"
+    "url": "https://github.com/tnrn/tnrn-splash-screen"
   },
   "keywords": [
     "react",
     "react-native",
     "react-component",
     "excard",
-    "rnkit",
-    "rnkit-splash-screen",
+    "tnrn",
+    "tnrn-splash-screen",
     "splash-screen"
   ],
   "peerDependencies": {
