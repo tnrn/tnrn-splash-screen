@@ -3,6 +3,7 @@ package io.rnkit.splashscreen;
 
 import android.app.Activity;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -14,18 +15,11 @@ import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 
 public class SplashScreenPackage implements ReactPackage {
-    private Activity activity;
-    private boolean translucent;
-
-    public SplashScreenPackage(Activity activity, boolean translucent) {
-        super();
-        this.activity = activity;
-        this.translucent = translucent;
-    }
-
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-      return Arrays.<NativeModule>asList(new SplashScreenModule(reactContext, activity, translucent));
+        List<NativeModule> modules = new ArrayList<>();
+        modules.add(new SplashScreenModule(reactContext));
+        return modules;
     }
 
     // RN 0.47 will remove this method
